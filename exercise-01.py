@@ -12,9 +12,9 @@
 # multa o valor da multa que João deverá pagar. 
 # Imprima os dados do programa com as mensagens adequadas.
 
-peso_de_peixes = 65
+peso_de_peixes = float(input('Insira a quantidade pescada'))
 
-def regulamento_pesca_sp(peso_de_peixes):
+def regulamento_pesca_sp(peso_de_peixes): 
     if peso_de_peixes > 50:
         excesso = peso_de_peixes - 50
         multa = excesso * 4
@@ -23,4 +23,4 @@ def regulamento_pesca_sp(peso_de_peixes):
     else:
         return f'O peso em kg da pesca é {peso_de_peixes}, portanto não excede o valor máximo'
         
-regulamento_pesca_sp(70)
+print(regulamento_pesca_sp(peso_de_peixes))
