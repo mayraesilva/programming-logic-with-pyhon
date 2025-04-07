@@ -29,12 +29,34 @@ def cobertura_tintas(area):
     #Apenas galões
     quantidade_galoes = math.ceil(quantidade_em_litros /3.6) #quantidade de galões necessária
     valor_galoes = quantidade_galoes * 25
-    print(f'Se deseja comprar apenas galoes, deve comprar {quantidade_galoes} latas, valor total R${valor_galoes},00')
+    print(f'Se deseja comprar apenas galoes, deve comprar {quantidade_galoes} galoes, valor total R${valor_galoes},00')
 
     #Misturando latas e galões
-    quantidade_parcial_latas =  int(quantidade_em_litros /18)
+    quantidade_parcial_latas =  int(quantidade_em_litros / 18)
     quantidade_parcial_galoes = int(quantidade_em_litros / 3.6)
     
+    #completanto a área
+    resto_lata = quantidade_em_litros % 18
+    complemento_quantidade_galao = math.ceil((math.ceil(resto_lata)) / 3.6) 
+
+    resto_galao = quantidade_em_litros % 3.6
+    complemento_quantidade_lata = math.ceil((math.ceil(resto_galao)) / 18)
+
+
+    valor_maioria_lata = quantidade_parcial_latas * 80 + complemento_quantidade_galao * 25
+    valor_maioria_galao = quantidade_parcial_galoes * 25 + complemento_quantidade_lata * 80
+
+    if valor_maioria_lata > valor_maioria_galao:
+        return f'Você deve comprar {quantidade_parcial_latas} latas e {complemento_quantidade_galao} galoes, total R${valor_maioria_lata},00'
+    
+    elif valor_maioria_galao > valor_maioria_lata:
+        return f'Você deve comprar {quantidade_parcial_galoes} galões e {complemento_quantidade_lata} lata, total R${valor_maioria_galao},00'
+    
+    
+
+print(cobertura_tintas(area))
+
+
 
 
 
