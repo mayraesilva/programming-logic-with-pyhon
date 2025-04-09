@@ -50,8 +50,9 @@
 # com 4 votos, correspondendo a 50% do total de votos.
 
 
-def vote_count(vote):
+def vote_count(votes): #recebe a lista contendo votos
 
+    #Possibilidades de votos:
     jogador_01 = []
     jogador_02 = []
     jogador_03 = []
@@ -76,15 +77,103 @@ def vote_count(vote):
     jogador_22 = []
     jogador_23 = []
 
+    for vote in votes:
 
+        if vote == '1':
+            jogador_01.append(vote)
+        
+        elif vote == '2':
+            jogador_02.append(vote)
 
+        elif vote == '3':
+            jogador_03.append(vote)
 
+        elif vote == '4':
+            jogador_04.append(vote)
 
-def best_player():
+        elif vote == '5':
+            jogador_05.append(vote)
+
+        elif vote == '6':
+            jogador_06.append(vote)
+
+        elif vote == '7':
+            jogador_07.append(vote)
+
+        elif vote == '8':
+            jogador_08.append(vote)
+
+        elif vote == '9':
+            jogador_09.append(vote)
+
+        elif vote == '10':
+            jogador_10.append(vote)
+
+        elif vote == '11':
+            jogador_11.append(vote)
+
+        elif vote == '12':
+            jogador_12.append(vote)
+
+        elif vote == '13':
+            jogador_13.append(vote)
+
+        elif vote == '14':
+            jogador_14.append(vote)
+
+        elif vote == '15':
+            jogador_15.append(vote)
+
+        elif vote == '16':
+            jogador_16.append(vote)
+        
+        elif vote == '17':
+            jogador_17.append(vote)
+
+        elif vote == '18':
+            jogador_18.append(vote)
+
+        elif vote == '19':
+            jogador_19.append(vote)
+
+        elif vote == '20':
+            jogador_20.append(vote)
+
+        elif vote == '21':
+            jogador_21.append(vote)
+
+        elif vote == '22':
+            jogador_22.append(vote)
+
+        elif vote == '23':
+            jogador_23.append(vote)
+        
+        elif vote == '0':
+            break
 
     
-    for jogador in range(0, 24):
-        jogador = input('Informe um valor entre 1 e 23: ')
+
+
+
+
+
+
+def best_player(total_de_votos=8):
+
+    votos = []
+    
+
+    while total_de_votos != 0:
+        total_de_votos = total_de_votos - 1
+        jogador = input('Informe um valor entre 1 e 23: ') 
+        votos.append(jogador)
+
+
+
+
+
+    #for jogador in range(0, 24):
+        
 
 
 
@@ -122,4 +211,4 @@ def best_player():
     pass
 
 
-#vote_count()
+best_player()
