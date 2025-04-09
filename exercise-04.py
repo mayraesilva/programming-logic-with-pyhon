@@ -152,6 +152,38 @@ def vote_count(votes): #recebe a lista contendo votos
             break
 
     
+    total_de_votos_por_jogador = [
+    len(jogador_01),
+    len(jogador_02),
+    len(jogador_03),
+    len(jogador_04),
+    len(jogador_05),
+    len(jogador_06),
+    len(jogador_07),
+    len(jogador_08),
+    len(jogador_09),
+    len(jogador_10),
+    len(jogador_11),
+    len(jogador_12),
+    len(jogador_13),
+    len(jogador_14),
+    len(jogador_15),
+    len(jogador_16),
+    len(jogador_17),
+    len(jogador_18),
+    len(jogador_19),
+    len(jogador_20),
+    len(jogador_21),
+    len(jogador_22),
+    len(jogador_23)
+    ]
+
+    mais_votados = sorted(total_de_votos_por_jogador, reverse=True)
+    print(mais_votados)
+
+    pass
+
+    
 
 
 
@@ -161,50 +193,30 @@ def vote_count(votes): #recebe a lista contendo votos
 def best_player(total_de_votos=8):
 
     votos = []
+
+    while total_de_votos != 0: #até não ter mais quem votar
+        total_de_votos = total_de_votos - 1
+        jogador = input('Informe um valor entre 1 e 23: ')
+
+        if int(jogador) in range(0,24):
+            votos.append(jogador)
+
+        else: #caso não seja encontrado o jogador
+
+            while int(jogador) not in range (0,24):
+                jogador = input(f'O jogador número {jogador} não foi identificado, insira um número válido: ')
+
+                if int(jogador) in range(0,24): #só acrescenta quando estiver no grupo
+                    votos.append(jogador)
+    
+    print(votos)
+    mais_votados = vote_count(votos)
     
 
-    while total_de_votos != 0:
-        total_de_votos = total_de_votos - 1
-        jogador = input('Informe um valor entre 1 e 23: ') 
-        votos.append(jogador)
 
-
-
-
-
-    #for jogador in range(0, 24):
-        
-
-
-
-    #print(jogador)
-
-
-    #Possibilidade de votos:
-
-    jogador_01 = []
-    jogador_02 = []
-    jogador_03 = []
-    jogador_04 = []
-    jogador_05 = []
-    jogador_06 = []
-    jogador_07 = []
-    jogador_08 = []
-    jogador_09 = []
-    jogador_10 = []
-    jogador_11 = []
-    jogador_12 = []
-    jogador_13 = []
-    jogador_14 = []
-    jogador_15 = []
-    jogador_16 = []
-    jogador_17 = []
-    jogador_18 = []
-    jogador_19 = []
-    jogador_20 = []
-    jogador_21 = []
-    jogador_22 = []
-    jogador_23 = []
+    print(melhor)
+    
+    #return(votos)
 
 
 
