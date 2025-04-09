@@ -180,6 +180,7 @@ def vote_count(votes, total_de_votos): #recebe a lista contendo votos
 
     #Ordenando os mais votados
     mais_votados = sorted(total_de_votos_por_jogador.items(), key=lambda item: item[1], reverse=True)
+    
     print(f'O jogador mais votado foi o {mais_votados[0][0]}, com {mais_votados[0][1]} votos e {((mais_votados[0][1] / total_de_votos)*100):.1f}% dos votos totais' )
     print(f'O segundo jogador mais votado foi o {mais_votados[1][0]}, com {mais_votados[1][1]} votos e {((mais_votados[1][1] / total_de_votos)*100):.1f}% dos votos totais' )
     print(f'O terceiro jogador mais votado foi o {mais_votados[2][0]}, com {mais_votados[2][1]} votos e {((mais_votados[2][1] / total_de_votos)*100):.1f}% dos votos totais' )
