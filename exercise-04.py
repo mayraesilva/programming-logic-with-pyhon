@@ -152,33 +152,33 @@ def vote_count(votes): #recebe a lista contendo votos
             break
 
     
-    total_de_votos_por_jogador = [
-    len(jogador_01),
-    len(jogador_02),
-    len(jogador_03),
-    len(jogador_04),
-    len(jogador_05),
-    len(jogador_06),
-    len(jogador_07),
-    len(jogador_08),
-    len(jogador_09),
-    len(jogador_10),
-    len(jogador_11),
-    len(jogador_12),
-    len(jogador_13),
-    len(jogador_14),
-    len(jogador_15),
-    len(jogador_16),
-    len(jogador_17),
-    len(jogador_18),
-    len(jogador_19),
-    len(jogador_20),
-    len(jogador_21),
-    len(jogador_22),
-    len(jogador_23)
-    ]
+    total_de_votos_por_jogador = {
+    "Jogador 1": len(jogador_01),
+    "Jogador 2": len(jogador_02),
+    "Jogador 3": len(jogador_03),
+    "Jogador 4": len(jogador_04),
+    "Jogador 5": len(jogador_05),
+    "Jogador 6": len(jogador_06),
+    "Jogador 7": len(jogador_07),
+    "Jogador 8": len(jogador_08),
+    "Jogador 9": len(jogador_09),
+    "Jogador 10": len(jogador_10),
+    "Jogador 11": len(jogador_11),
+    "Jogador 12": len(jogador_12),
+    "Jogador 13": len(jogador_13),
+    "Jogador 14": len(jogador_14),
+    "Jogador 15": len(jogador_15),
+    "Jogador 16": len(jogador_16),
+    "Jogador 17": len(jogador_17),
+    "Jogador 18": len(jogador_18),
+    "Jogador 19": len(jogador_19),
+    "Jogador 20": len(jogador_20),
+    "Jogador 21": len(jogador_21),
+    "Jogador 22": len(jogador_22),
+    "Jogador 23": len(jogador_23)
+    }
 
-    mais_votados = sorted(total_de_votos_por_jogador, reverse=True)
+    mais_votados = sorted(total_de_votos_por_jogador.values(), reverse=True)
     print(mais_votados)
 
     pass
@@ -210,11 +210,12 @@ def best_player(total_de_votos=8):
                     votos.append(jogador)
     
     print(votos)
-    mais_votados = vote_count(votos)
     
+    mais_votados = vote_count(votos)
 
 
-    print(melhor)
+
+    print(mais_votados)
     
     #return(votos)
 
