@@ -50,7 +50,7 @@
 # com 4 votos, correspondendo a 50% do total de votos.
 
 
-def vote_count(votes): #recebe a lista contendo votos
+def vote_count(votes, total_de_votos): #recebe a lista contendo votos
 
     #Possibilidades de votos:
     jogador_01 = []
@@ -151,7 +151,7 @@ def vote_count(votes): #recebe a lista contendo votos
         elif vote == '0':
             break
 
-    
+    #Organizando quantos votos cada jogador recebeu
     total_de_votos_por_jogador = {
     "Jogador 1": len(jogador_01),
     "Jogador 2": len(jogador_02),
@@ -178,10 +178,13 @@ def vote_count(votes): #recebe a lista contendo votos
     "Jogador 23": len(jogador_23)
     }
 
-    mais_votados = sorted(total_de_votos_por_jogador.values(), reverse=True)
-    print(mais_votados)
+    #Ordenando os mais votados
+    mais_votados = sorted(total_de_votos_por_jogador.items(), key=lambda item: item[1], reverse=True)
+    print(f'O jogador mais votado foi o {mais_votados[0][0]}, com {mais_votados[0][1]} votos e {((mais_votados[0][1] / total_de_votos)*100):.1f}% dos votos totais' )
+    print(f'O segundo jogador mais votado foi o {mais_votados[1][0]}, com {mais_votados[1][1]} votos e {((mais_votados[1][1] / total_de_votos)*100):.1f}% dos votos totais' )
+    print(f'O terceiro jogador mais votado foi o {mais_votados[2][0]}, com {mais_votados[2][1]} votos e {((mais_votados[2][1] / total_de_votos)*100):.1f}% dos votos totais' )
 
-    pass
+    return mais_votados
 
     
 
@@ -192,6 +195,7 @@ def vote_count(votes): #recebe a lista contendo votos
 
 def best_player(total_de_votos=8):
 
+    votos_totais = total_de_votos
     votos = []
 
     while total_de_votos != 0: #até não ter mais quem votar
@@ -209,19 +213,15 @@ def best_player(total_de_votos=8):
                 if int(jogador) in range(0,24): #só acrescenta quando estiver no grupo
                     votos.append(jogador)
     
-    print(votos)
+    #print(votos)
     
-    mais_votados = vote_count(votos)
+    #mais_votados = vote_count(votos, votos_totais)
 
+    return vote_count(votos, votos_totais)
 
-
-    print(mais_votados)
+    #print(mais_votados)
     
     #return(votos)
-
-
-
-    pass
 
 
 best_player()
