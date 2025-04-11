@@ -1,4 +1,6 @@
-# #Uma empresa de pesquisas precisa tabular os resultados da seguinte enquete
+#Tentativa 1 de Mayra Silva
+
+# Uma empresa de pesquisas precisa tabular os resultados da seguinte enquete
 #  feita a um grande quantidade de organizações: 
 # "Qual o melhor Sistema Operacional para uso em servidores?"
 
@@ -23,6 +25,32 @@
 # Total 8800
 
 # O Sistema Operacional mais votado foi o Unix, com 3500 votos, correspondendo a 40% dos votos.
+
+
+
+
+
+def best_OS():
+    operational_systems = {'Windows Server' : 1, 'Unix' : 2, 'Linux' : 3, 
+                           'Netware' : 4, 'Mac OS' : 5, 'Outro' : 6  }
+    
+    #contadores de votos para cada sistema operacional
+    windows_server_votes = 0
+    unix_votes = 0
+    linux_votes = 0
+    netware_ = 0
+    mac_os_votes = 0
+    outro_votes = 0
+
+    
+
+
+
+
+
+    pass
+
+best_OS()
 
 
 
