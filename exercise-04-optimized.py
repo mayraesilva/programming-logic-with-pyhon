@@ -48,3 +48,31 @@
 # 11 1 12,5% 
 # O melhor jogador foi o número 9,
 # com 4 votos, correspondendo a 50% do total de votos.
+
+
+def best_player(total_de_votos=8):
+
+    votos = [] #votos armazenados 
+
+    while total_de_votos != 0: #até não ter mais quem votar
+        total_de_votos = total_de_votos - 1
+        jogador = input('Informe um valor entre 1 e 23: ')
+
+        if int(jogador) in range(1, 24):
+            votos.append(jogador)
+
+        elif int(jogador) == 0:
+            break
+
+        else: #caso não seja encontrado o jogador
+
+            while int(jogador) not in range (0, 24):
+                jogador = input(f'O jogador número {jogador} não foi identificado, insira um número válido: ')
+
+                if int(jogador) in range(0,24): #só acrescenta quando estiver no grupo
+                    votos.append(jogador)
+        
+    pass
+
+
+best_player()
