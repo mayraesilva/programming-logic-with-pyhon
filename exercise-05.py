@@ -38,11 +38,39 @@ def best_OS():
     windows_server_votes = 0
     unix_votes = 0
     linux_votes = 0
-    netware_ = 0
+    netware_votes = 0
     mac_os_votes = 0
     outro_votes = 0
 
-    
+
+
+    #Votos
+    votos_sistema = [windows_server_votes, unix_votes, linux_votes,
+                      netware_votes, mac_os_votes, outro_votes]
+    voto = 0
+
+
+    while voto != '0':
+        voto = input('Informe um valor entre 1 e 6: ')
+
+        try:
+            if int(voto) in range(1, 7):
+                votos_sistema[int(voto) - 1] += 1
+            
+            elif voto == '0':
+                break
+
+            else: #Caso o sistema não esteja na lista disponível
+                print(f'O SO número {voto} não foi identificado, tente novamente.')
+
+        except ValueError:
+            print(f'O SO número {voto} não foi identificado, tente novamente.')
+
+            
+            
+    print(votos_sistema)
+
+
 
 
 
