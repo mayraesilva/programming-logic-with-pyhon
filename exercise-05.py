@@ -66,9 +66,19 @@ def best_OS():
         except ValueError:
             print(f'O SO número {voto} não foi identificado, tente novamente.')
 
-            
-            
+    
+        
     print(votos_sistema)
+
+    total_de_votos = sum(votos_sistema)
+    print(total_de_votos)
+
+    for sistema in votos_sistema:
+        print(f'O percentual de votos do sistema foi {((sistema/ total_de_votos) * 100):.1f}% dos votos totais')
+    
+    print(f'Total de votos {total_de_votos}')
+    
+
 
 
 
