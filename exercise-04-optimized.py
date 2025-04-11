@@ -73,12 +73,11 @@ def best_player():
     
     print(votos)
 
+    #adiciconando jogadores ao dict
+    for jogador in votos: #Iniciando o dicionário com jogadores que receberam votos
+        total_votos_por_jogador.update({jogador : 0})
 
-    for jogador in range (1, 24): #Iniciando o dicionário com jogadores e votos 0
-        total_votos_por_jogador.update({str(jogador) : 0})
-
-    
-   #print(total_votos_por_jogador)
+    print(total_votos_por_jogador)
 
     #Iniciando a contagem de votos
     for voto in votos:
