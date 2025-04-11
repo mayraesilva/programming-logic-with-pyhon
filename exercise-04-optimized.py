@@ -96,8 +96,12 @@ def best_player():
 
     #Resultados
     print(f'O jogador mais votado foi o  jogador {mais_votados[0][0]}, com {mais_votados[0][1]} votos e {((mais_votados[0][1] / total_votos)*100):.1f}% dos votos totais' )
-    print(f'O segundo jogador mais votado foi o jogador {mais_votados[1][0]}, com {mais_votados[1][1]} votos e {((mais_votados[1][1] / total_votos)*100):.1f}% dos votos totais' )
-    print(f'O terceiro jogador mais votado foi o jogador {mais_votados[2][0]}, com {mais_votados[2][1]} votos e {((mais_votados[2][1] / total_votos)*100):.1f}% dos votos totais' )
+    if len(mais_votados) > 1:
+        print(f'O segundo jogador mais votado foi o jogador {mais_votados[1][0]}, com {mais_votados[1][1]} votos e {((mais_votados[1][1] / total_votos)*100):.1f}% dos votos totais' )
+    
+    if len(mais_votados) > 2:
+        print(f'O terceiro jogador mais votado foi o jogador {mais_votados[2][0]}, com {mais_votados[2][1]} votos e {((mais_votados[2][1] / total_votos)*100):.1f}% dos votos totais' )
+        
     print(f'Lembrando que nessa votação tivemos {total_votos} votos') 
 
 
