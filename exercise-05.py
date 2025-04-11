@@ -34,6 +34,8 @@ def best_OS():
     operational_systems = {'Windows Server' : 1, 'Unix' : 2, 'Linux' : 3, 
                            'Netware' : 4, 'Mac OS' : 5, 'Outro' : 6  }
     
+    print(f'As opções de voto disponíveis são {operational_systems}')
+
     #contadores de votos para cada sistema operacional
     windows_server_votes = 0
     unix_votes = 0
@@ -67,8 +69,14 @@ def best_OS():
             print(f'O SO número {voto} não foi identificado, tente novamente.')
 
     
+    for votos in votos_sistema:
+            operational_systems[sistema] = votos
+
+            
         
-    print(votos_sistema)
+    
+    #print(votos_sistema)
+    print(operational_systems)
 
     total_de_votos = sum(votos_sistema)
     print(total_de_votos)
