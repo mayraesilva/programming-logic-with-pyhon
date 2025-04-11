@@ -71,22 +71,37 @@ def best_player():
                 if int(jogador) in range(0,24): #só acrescenta quando estiver no grupo
                     votos.append(jogador)
     
-    print(votos)
+    #print(votos)
+    total_votos = len(votos)
 
     #adiciconando jogadores ao dict
     for jogador in votos: #Iniciando o dicionário com jogadores que receberam votos
         total_votos_por_jogador.update({jogador : 0})
 
+  
     print(total_votos_por_jogador)
 
     #Iniciando a contagem de votos
     for voto in votos:
         total_votos_por_jogador[voto] += 1
     
-    print(total_votos_por_jogador)
+    #print(total_votos_por_jogador)
+
+    
+    mais_votados = sorted(total_votos_por_jogador.items(), key=lambda item: item[1], reverse=True)
+
+    #print(mais_votados)
+    
+    
+
+    #Resultados
+    print(f'O jogador mais votado foi o  jogador {mais_votados[0][0]}, com {mais_votados[0][1]} votos e {((mais_votados[0][1] / total_votos)*100):.1f}% dos votos totais' )
+    print(f'O segundo jogador mais votado foi o jogador {mais_votados[1][0]}, com {mais_votados[1][1]} votos e {((mais_votados[1][1] / total_votos)*100):.1f}% dos votos totais' )
+    print(f'O terceiro jogador mais votado foi o jogador {mais_votados[2][0]}, com {mais_votados[2][1]} votos e {((mais_votados[2][1] / total_votos)*100):.1f}% dos votos totais' )
+    print(f'Lembrando que nessa votação tivemos {total_votos} votos') 
 
 
-    pass
+    return
 
 
 best_player()
