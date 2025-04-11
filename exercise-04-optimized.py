@@ -50,19 +50,18 @@
 # com 4 votos, correspondendo a 50% do total de votos.
 
 
-def best_player(total_de_votos=8):
+def best_player():
 
     votos = [] #votos armazenados 
+    jogador = 0
+    total_votos_por_jogador = {}
 
-    while total_de_votos != 0: #até não ter mais quem votar
-        total_de_votos = total_de_votos - 1
+    while jogador != '0': #até 0 ser acionado
         jogador = input('Informe um valor entre 1 e 23: ')
-
+        
         if int(jogador) in range(1, 24):
             votos.append(jogador)
 
-        elif int(jogador) == 0:
-            break
 
         else: #caso não seja encontrado o jogador
 
@@ -71,7 +70,8 @@ def best_player(total_de_votos=8):
 
                 if int(jogador) in range(0,24): #só acrescenta quando estiver no grupo
                     votos.append(jogador)
-        
+    
+    print(votos)
     pass
 
 
