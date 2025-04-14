@@ -32,8 +32,15 @@
 
 def best_OS():
     #Dicionário que relaciona os SO a chaves de voto:
-    operational_systems = {'Windows Server' : 1, 'Unix' : 2, 'Linux' : 3, 
-                           'Netware' : 4, 'Mac OS' : 5, 'Outro' : 6  }
+    operational_systems = {
+    1: 'Windows Server',
+    2: 'Unix',
+    3: 'Linux',
+    4: 'Netware',
+    5: 'Mac OS',
+    6: 'Outro'
+    }
+
     
     print(f'As opções de voto disponíveis são {operational_systems}')
 
@@ -83,8 +90,8 @@ def best_OS():
     total_de_votos = sum(votos_sistema)
     print(total_de_votos)
 
-    for key, sistema in zip(operational_systems.keys(), votos_sistema):
-        print(f'O percentual de votos do {key} foi {((sistema/ total_de_votos) * 100):.1f}% dos votos totais')
+    for value, sistema in zip(operational_systems.values(), votos_sistema):
+        print(f'O percentual de votos do {value} foi {((sistema/ total_de_votos) * 100):.1f}% dos votos totais')
     
     print(f'Total de votos: {total_de_votos}')
     
@@ -93,24 +100,14 @@ def best_OS():
     mais_votado_sistema = None
 
     for key, value in operational_systems_votes.items():
-        if value > mais_votado:
-            mais_votado = value
+        if value > mais_votado_votos:
+            mais_votado_votos = value
             mais_votado_sistema = key
 
-    
+    for key, sistema in zip(operational_systems.keys(), votos_sistema):
+        if mais_votado_sistema in operational_systems.keys():
+            return print(f'O Sistema Operacional mais votado foi o {operational_systems[mais_votado_sistema]}, com {operational_systems_votes[mais_votado_sistema]} votos, e {((operational_systems_votes[sistema]/ total_de_votos) * 100):.1f}% dos votos totais')
 
-    
-    
-    #return f'O Sistema Operacional mais votado foi o {operational_systems_votes.get[]}'
-
-
-
-
-
-
-
-
-    pass
 
 best_OS()
 
