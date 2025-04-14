@@ -18,5 +18,5 @@ for nome in nomes:
 
 
 for nome, tamanho in zip(nomes, tamanho_nomes):
-    print(f'O {nome} tem {tamanho} letras')
+    print(f'O  nome {nome} tem {tamanho} letras')
     
