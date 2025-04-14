@@ -80,21 +80,26 @@ def best_OS():
     #print(operational_systems_votes)
 
 
-
-
-
-        
-        
-    
-
     total_de_votos = sum(votos_sistema)
     print(total_de_votos)
 
     for key, sistema in zip(operational_systems.keys(), votos_sistema):
         print(f'O percentual de votos do {key} foi {((sistema/ total_de_votos) * 100):.1f}% dos votos totais')
     
-    print(f'Total de votos {total_de_votos}')
+    print(f'Total de votos: {total_de_votos}')
     
+
+    mais_votado_votos = 0
+    mais_votado_sistema = None
+
+    for key, value in operational_systems_votes.items():
+        if value > max_value:
+            mais_votado = value
+            mais_votado_sistema = key
+
+    
+    
+    return f'O Sistema Operacional mais votado foi o {operational_systems_votes[]}'
 
 
 
