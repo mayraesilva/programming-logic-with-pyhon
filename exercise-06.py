@@ -42,3 +42,59 @@
 # Total gasto com abonos: R$ 1400.00
 #  Valor mínimo foi pago a 3 colaboradores 
 # Maior valor de abono pago: R$ 900.00
+
+def abono_salarial():
+
+    salario = 0
+    salarios = []
+    bonus_salarial = []
+    valor_minimo_count = 0
+    total_de_colaboradores = len(salarios)
+
+    while salario != '0':
+        salario = input('Informe seu salário em reais: ')
+
+        try:
+
+            if salario == '0':
+                break
+
+            else:
+                salarios.append(int(salario))
+            
+            
+        except ValueError:
+            print(f'O salário {salario} não foi lido corretamente, tente novamente.')
+
+    print(salarios)
+
+
+    for salario in salarios:
+        bonus = salario * 0.2
+
+        if bonus < 100:
+            bonus = 100
+            valor_minimo_count += 1
+            bonus_salarial.append(bonus)
+            
+        
+        else:
+            bonus_salarial.append(bonus)
+
+    maior_bonus = max(bonus_salarial)
+    total_gasto_abono = sum(bonus_salarial)
+
+
+
+    for salario, bonus in zip(salarios, bonus_salarial):
+        print(f'O salario de R$ {salario},00 recebeu o abono de R$ {bonus},00')
+
+    print(f'Foram processados {total_de_colaboradores} colaboradores')
+    print(f'Total gasto com abonos: R$ {total_gasto_abono},00')
+    print(f'O valor mínimo foi pago a {valor_minimo_count} colaboradores')
+    print(f'O maior valor de abono pago: R$ {maior_bonus},00')
+            
+
+    return bonus_salarial
+
+abono_salarial()
