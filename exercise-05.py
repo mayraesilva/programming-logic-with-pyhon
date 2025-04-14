@@ -93,13 +93,15 @@ def best_OS():
     mais_votado_sistema = None
 
     for key, value in operational_systems_votes.items():
-        if value > max_value:
+        if value > mais_votado:
             mais_votado = value
             mais_votado_sistema = key
 
     
+
     
-    return f'O Sistema Operacional mais votado foi o {operational_systems_votes[]}'
+    
+    #return f'O Sistema Operacional mais votado foi o {operational_systems_votes.get[]}'
 
 
 
