@@ -87,12 +87,12 @@ def abono_salarial():
 
 
     for salario, bonus in zip(salarios, bonus_salarial):
-        print(f'O colaborador com salario de R$ {salario},00 recebeu o abono de R$ {bonus},00')
+        print(f'O colaborador com salario de R$ {salario},00 recebeu o abono de R$ {bonus:.2f}')
 
-    print(f'Foram processados {total_de_colaboradores} colaboradores')
-    print(f'Total gasto com abonos: R$ {total_gasto_abono},00')
+    print(f'Foram processados {total_de_colaboradores} colaboradore(s)')
+    print(f'Total gasto com abonos: R$ {total_gasto_abono:.2f}')
     print(f'O valor mínimo foi pago a {valor_minimo_count} colaboradores')
-    print(f'O maior valor de abono pago: R$ {maior_bonus},00')
+    print(f'O maior valor de abono pago: R$ {maior_bonus:.2f}')
             
 
     return bonus_salarial
